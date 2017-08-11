@@ -1,0 +1,32 @@
+html {
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #000;
+    line-height: 1.4em;
+    font-size: 14px;
+}
+body {
+    background-color: #0794FF;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+    clear: both;
+}
+.separate {
+    display: block;
+    height: 10.5px;
+    border-bottom: 1px dashed rgba(0, 0, 0, .5);
+    margin-bottom: 10.5px;
+}
+a:link,
+a:hover {
+    text-decoration: none;
+    color: #000;
+}

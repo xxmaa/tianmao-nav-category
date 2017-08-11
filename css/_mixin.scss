@@ -1,0 +1,23 @@
+$navitem : '.nav-item-';
+$panel: '.panel-';
+$select : '.selected';
+@mixin addColor ($number, $color) {
+    #{$navitem}#{$number}#{$select}  {
+        a, i {
+            color: $color!important;
+        }
+    }
+    #{$panel}#{$number} {
+        .highlight , a:hover {
+            color: $color!important;
+        }
+    }
+}
+/*
+*.nav-item-16.selected i,
+*.nav-item-16.selected a,
+*.panel-16 .highlight,
+*.panel-16 a:hover  {
+*        color: #565!important;
+*}
+*/

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分类导航菜单</title>
+	<link rel="stylesheet" href="./dist/assets/css/style.min.css">
+	<link rel="stylesheet" href="./caomei/style.css">
+	<script src="./js/art-template.js"></script>
+	<script src="./data/data.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="nav-con">	
+		</div>
+		<div class="content-con">
+		</div>
+	</div>
+	<script id="category" type="text/html">
+		<ul>
+			{{ each category val key}}
+			<li class="nav-item nav-item-{{key + 1}}">
+				<i class="{{ val.icon }}"></i>
+				{{ each val.word val1 key1}}
+					<a href="javascript:;">{{ val1 }}</a>
+					{{ if (key1 != val.word.length -1) }}
+					/
+					{{ /if }}
+				{{ /each }}
+			</li>
+			{{ /each }}
+		</ul>
+	</script>
+	<script id="con" type="text/html">
+	{{each con val1 key1}}
+		<div class="panel-con">
+			<div class="panel-{{ key1+1 }}">
+				<div class="hot-word-con">
+					{{ each val1.data val2 key2 }}
+						<div class="hot-line">
+							<div class="line-title">
+								<div class="title-text">{{ val2.title}}</div>
+								<i class="czs-angle-right-l"></i>
+							</div>
+							<div class="line-con">
+								{{ each val2.content val3 key3 }}
+									<a href="javascript:;">{{ val3 }}</a>
+								{{ /each}}
+								{{ if (key2 != val1.data.length - 1) }}
+									<div class="separate clearfix"></div>
+								{{ /if }}
+							</div>
+						</div>
+					{{/each}}
+				</div>
+				<div class="img-con">
+					{{ each val1.image }}
+					<img src="{{ $value }}" alt="">
+					{{ /each }}
+				</div>
+			</div>
+		</div>
+	{{ /each }}
+	</script>
+	<script src="./js/user.js"></script>
+</body>
+</html>

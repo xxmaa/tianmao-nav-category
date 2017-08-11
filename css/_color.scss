@@ -1,0 +1,5 @@
+@import 'mixin';
+@import 'variable';
+@for $i from 1 through 16 {
+     @include addColor($i, nth($color,random(9)));
+}
